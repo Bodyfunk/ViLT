@@ -1,0 +1,2 @@
+'Url of an image.','Caption with [MASK] tokens to be filled.','Index of token for heatmap visualization (ignored if zero)','Image','description','selected token','flag','username','timestamp'
+'https://s3.geograph.org.uk/geophotos/06/21/24/6212487_1cca7f3f_1024x1024.jpg','a display of flowers growing out and over the [MASK] [MASK] in front of [MASK] on a [MASK] [MASK].',0,'Image/0.png','a display of flowers growing out and over the stone wall in front of houses on a residential street.','','','','2022-07-14 21:30:14.663271'

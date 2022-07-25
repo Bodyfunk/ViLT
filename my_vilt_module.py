@@ -161,18 +161,18 @@ class ViLTransformerSS(pl.LightningModule):
         for i, blk in enumerate(self.transformer.blocks):
             x, _attn = blk(x, mask=co_masks)
 
-        x = self.transformer.norm(x)    #x就是两种模态交融后后feature
+        x = self.transformer.norm(x)
         text_feats, image_feats = (
             x[:, : text_embeds.shape[1]],
             x[:, text_embeds.shape[1] :],
         )
-        cls_feats = self.pooler(x)      #cls_feats是经过pool的feature (1,768)
+        cls_feats = self.pooler(x)
 
         ret = {
             "text_feats": text_feats,
             "image_feats": image_feats,
             "cls_feats": cls_feats,
-            "raw_cls_feats": x[:, 0],   #(1, 47, 768)
+            "raw_cls_feats": x[:, 0],
             "image_labels": image_labels,
             "image_masks": image_masks,
             "text_labels": text_labels,
